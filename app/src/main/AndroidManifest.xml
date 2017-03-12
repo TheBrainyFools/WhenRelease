@@ -25,5 +25,13 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <receiver
+            android:name=".receiver.AlarmReceiver"
+            android:process=":remote" />
+        <receiver android:name=".receiver.AlarmSetter">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
