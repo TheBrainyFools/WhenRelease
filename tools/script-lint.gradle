@@ -4,5 +4,6 @@ android {
         htmlOutput file("$project.buildDir/outputs/lint/lint.html")
         warningsAsErrors true
         xmlReport false
+        abortOnError false
     }
 }
