@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.whenrelease.whenrelease.fragment.MainFollowedFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_followed_RV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
+
+    <RelativeLayout
+        android:id="@+id/main_followed_body_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textInTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="You didn't add anything"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textInBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textInTop"
+            android:layout_centerHorizontal="true"
+            android:text="Add something just now! :)"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</RelativeLayout>
