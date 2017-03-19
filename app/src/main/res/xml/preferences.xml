@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/first_run">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_guide"
+            android:summaryOff="@string/guideOff"
+            android:summaryOn="@string/guideOn"
+            android:title="@string/guide" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/on_load">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_splashScreen"
+            android:summaryOff="@string/splashScreenOff"
+            android:summaryOn="@string/splashScreenOn"
+            android:title="@string/splashScreen" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/general">
+
+        <ListPreference
+            android:defaultValue="00"
+            android:dialogTitle="Choose the hour when I will be notify you about the new release :)"
+            android:entries="@array/preferences_hour"
+            android:entryValues="@array/preferences_hour"
+            android:key="preferences_hour"
+            android:summary="Change the hour"
+            android:title="Hour" />
+    </PreferenceCategory>
+</PreferenceScreen>
