@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/movie_tabContent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.whenrelease.whenrelease.fragment.MovieFragment">
+    android:layout_height="match_parent">
 
     <android.support.v4.app.FragmentTabHost
         android:id="@+id/movie_tabHost"
