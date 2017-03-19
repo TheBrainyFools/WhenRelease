@@ -13,7 +13,10 @@ android:
     - sys-img-armeabi-v7a-android-22
 
   notifications:
+    email: false
     slack: iot-2016:UXyDg9Ii7NjIVTdVIwX9CIJP
+    on_success: always
+    on_failure: always
 
-  script:
-  - chmod +x ./gradlew
+  before_install:
+    - chmod +x gradlew
