@@ -1,4 +1,64 @@
 <resources>
+    <!-- MAIN SECTION -->
     <string name="app_name">WhenRelease</string>
     <string name="action_settings">Settings</string>
+    <!-- !MAIN SECTION -->
+
+    <!-- PREFERENCES SECTION -->
+    <string name="first_run">First run</string>
+
+    <string name="guide">Guide</string>
+    <string name="guideOff">Do you want to turn on the guide once?</string>
+    <string name="guideOn">Do you want to turn off the guide?</string>
+
+    <string name="on_load">On loading</string>
+
+    <string name="splashScreen">SplashScreen</string>
+    <string name="splashScreenOff">Do you want to turn on the SplashScreen?</string>
+    <string name="splashScreenOn">Do you want to turn off the SplashScreen?</string>
+
+    <string name="general">General</string>
+
+    <string-array name="preferences_hour">
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+    </string-array>
+    <!-- !PREFERENCES SECTION -->
+
+    <!-- STATUS SECTION -->
+    <string name="loading">Loading…</string>
+    <string name="loading_text">Please wait while data is loading…</string>
+    <!-- !STATUS SECTION -->
+
+    <!-- ACTIONS SECTION -->
+    <string name="refresh">Refresh</string>
+    <string name="search">Search</string>
+    <string name="donate">Donate us!</string>
+    <string name="rate">Rate us!</string>
+    <string name="add_to_watched">Add to watched</string>
+    <string name="add_to_follow">Add to followed</string>
+    <string name="add_to_favourite">Add to favourite</string>
+    <!-- !ACTIONS SECTION -->
 </resources>
