@@ -1,6 +1,6 @@
 # WhenRelease.app
 
-![WhenRelease Build Status](https://circleci.com/gh/TheBrainyFools/WhenRelease.svg?style=shield&circle-token=9634f3cd0d263fb20b1a729d47fa6011f449e778)
+[![WhenRelease.app Build Status](https://travis-ci.org/TheBrainyFools/WhenRelease.svg?branch=master)](https://travis-ci.org/TheBrainyFools/WhenRelease)
 
 WhenRelease is an application that helps You watch movies and TV shows first. We will inform you about release of new movies, a TV series that interest You!
 
