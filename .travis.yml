@@ -1,4 +1,7 @@
 language: android
+jdk: oraclejdk8
+sudo: false
+
 android:
   components:
     - platform-tools
@@ -12,11 +15,12 @@ android:
 
     - sys-img-armeabi-v7a-android-22
 
+  before_install:
+    - chmod +x gradlew
+
   notifications:
     email: false
     slack: iot-2016:UXyDg9Ii7NjIVTdVIwX9CIJP
     on_success: always
     on_failure: always
-
-  before_install:
-    - chmod +x gradlew
+    on_start: false
