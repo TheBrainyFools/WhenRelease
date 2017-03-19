@@ -14,3 +14,6 @@ android:
 
   notifications:
     slack: iot-2016:UXyDg9Ii7NjIVTdVIwX9CIJP
+
+  script:
+  - chmod +x ./gradlew
