@@ -19,4 +19,3 @@
 -ignorewarnings
 -dontobfuscate
 -dontoptimize
--ignorewarnings

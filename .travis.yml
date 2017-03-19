@@ -1,32 +1,30 @@
 language: android
 jdk: oraclejdk8
 sudo: false
-
 android:
   components:
-    - platform-tools
-    - tools
-    - android-25
-    - build-tools-25.0.1
-    - extra-android-support
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-
-    - sys-img-armeabi-v7a-android-22
-
+  - platform-tools
+  - tools
+  - android-25
+  - build-tools-25.0.1
+  - extra-android-support
+  - extra-google-google_play_services
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - sys-img-armeabi-v7a-android-22
   before_script:
-    - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-    - emulator -avd test -no-skin -no-audio -no-window &
-    - android-wait-for-emulator
-    - adb shell input keyevent 82 &
-
+  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
   before_install:
-    - chmod +x gradlew
-
+  - chmod +x gradlew
   notifications:
     email: false
     slack: iot-2016:UXyDg9Ii7NjIVTdVIwX9CIJP
     on_success: always
     on_failure: always
     on_start: false
+notifications:
+  slack:
+    secure: O+gHQLgmboIbL3jyAbYXsrsHLQX3t9jZy9zq9pUEYpY3EUgF1SF7pxzLVb9fs2VSzNqbo7N2zyQPWVOOp3KLNURjDmSMA3Algt5z69EZm/6ro8wi5a5hzHZV6Uldf4/XmRjEIuhwp3NRlQjM5+x8904g45aYMpOxT/ralik2I8cC/AJ80ezNt9x2z7v/P8AFSXv5grtoujK6BdcQ2hU/G0NlU81TxewV3YM/l1ZcsGf3Jt8x3U5cCe9R2eu5uC2+t8/koBIfcyktuMnLvSL2h35v9EOwXatoYxRmJPpgFZ9osy1s+KKC0cMO7XbMOFK2NxqYm0syngY+0wCc6+I+IJUerCpoaBCvSLkARb/VVSeKyqVx3RpSGtTmeHBKIgjG5wcngqshUE3uTItmWE0iCWGxQBxIwiONlzh+KFQ5h4GzbgI9t/o8ltJuzhtSANQLgRwPtCbrNDL49KexpKr3kRUI5zia+41nyo2Zqn0WqeMCDqJcOwrh8mtZiQDxpjRK6KzKZqzAB84NUhKKZ5AZxQaCKlGA8SIFJ0bfXYFJJQHLHi+K4mZ0SfN9ADF8jUo+yl3GyVNWrvCfqp25kocft89F56GuY0pI3gu6Y2C99ROnBfRltaseRAcbYOPXAR7il7LfuYfQnXww9sS3unLWVKZgQG/61b8EewxtCMg3Mlk=
