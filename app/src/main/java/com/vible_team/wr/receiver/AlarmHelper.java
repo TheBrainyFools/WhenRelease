@@ -6,18 +6,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
-public class AlarmHelper {
+class AlarmHelper {
     private static AlarmHelper instance;
     private Context context;
     private AlarmManager alarmManager;
 
-    public static AlarmHelper getInstance() {
+    static AlarmHelper getInstance() {
         if (instance == null)
             instance = new AlarmHelper();
         return instance;
     }
 
-    public void init(Context context) {
+    void init(Context context) {
         this.context = context;
         alarmManager = (AlarmManager) context.getApplicationContext().getSystemService(Context.ALARM_SERVICE);
     }

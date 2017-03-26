@@ -28,7 +28,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
         builder.setContentTitle(context.getResources().getString(R.string.app_name));
         builder.setContentText(title + " is already released!");
-        builder.setSmallIcon(R.drawable.ic_new_release_white_48dp);
+        builder.setSmallIcon(R.drawable.ic_launcher);
         builder.setDefaults(Notification.DEFAULT_ALL);
         builder.setContentIntent(pendingIntent);
         builder.setAutoCancel(true);
@@ -39,6 +39,5 @@ public class AlarmReceiver extends BroadcastReceiver {
         notificationManager.notify(ID, notification);
 
         databaseHelper = new DatabaseHelper(context);
-        databaseHelper.update().notificated(ID);
     }
 }
