@@ -10,7 +10,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
     defaultConfig {
-        applicationId "com.vible_team.wr"
+        applicationId "com.the_brainy_fools.wr"
         minSdkVersion 15
         targetSdkVersion 25
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,14 +34,14 @@ android {
             signingConfig signingConfigs.debug
             versionCode gitVersionCodeTime
             versionName gitVersionName
-            applicationId "com.vible_team.wr"
+            applicationId "com.the_brainy_fools.wr"
         }
 
         prod {
             signingConfig signingConfigs.release
             versionCode gitVersionCode
             versionName gitVersionName
-            applicationId "com.vible_team.wr"
+            applicationId "com.the_brainy_fools.wr"
         }
     }
     buildTypes {
