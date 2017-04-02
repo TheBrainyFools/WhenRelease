@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.the_brainy_fools.wr.MainActivity">
+
+    <item
+        android:id="@+id/airing_test1"
+        android:title="Menu item 1"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/airing_test2"
+        android:title="Menu item with icon 1"
+        android:icon="@drawable/ic_follow_white_48dp"
+        app:showAsAction="ifRoom" />
+</menu>
