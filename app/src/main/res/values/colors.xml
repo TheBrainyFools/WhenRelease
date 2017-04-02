@@ -9,6 +9,7 @@
     <color name="colorIcons">#FFFFFF</color>
     <color name="colorDivider">#BDBDBD</color>
 
-    <!-- Customs -->
+    <!-- CUSTOM -->
     <color name="colorBackground">#ffffff</color>
+    <!-- !CUSTOM -->
 </resources>
