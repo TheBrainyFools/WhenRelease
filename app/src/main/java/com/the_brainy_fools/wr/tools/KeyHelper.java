@@ -6,8 +6,6 @@ public class KeyHelper {
 
     public static final String MOVIE_SOON_URL_REQUEST = API_BASE + "discover/movie/?sort_by=popularity.desc&" + API_KEY;
     public static final String MOVIE_ID_URL_REQUEST = API_BASE + "movie/";
-
     public static final String MOVIE_CINEMA_URL_REQUEST = API_BASE + "movie/now_playing?" + API_KEY;
-
     public static final String SERIAL_AIRING_URL_REQUEST = API_BASE + "tv/airing_today?" + API_KEY;
 }
