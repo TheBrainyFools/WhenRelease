@@ -1,9 +1,9 @@
 package com.the_brainy_fools.wr.model;
 
 public class MainModel{
-    int ID;
-    String poster, title, genres, date;
-    long dateMill;
+    private int ID;
+    private String poster, title, genres, date;
+    private long dateMill;
 
     public int getID() {
         return ID;
