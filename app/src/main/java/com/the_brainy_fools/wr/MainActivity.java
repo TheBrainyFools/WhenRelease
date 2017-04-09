@@ -98,21 +98,21 @@ public class MainActivity extends Debug {
 
             startActivity(new Intent(this, GuideActivity.class));
 
+            new TapTargetSequence(this)
+                    .target(
+                            TapTarget.forToolbarNavigationIcon(toolbar, "Navigation!", "Navigation will help you to find the right section!")
+                                    .outerCircleColor(R.color.colorPrimary)
+                                    .targetCircleColor(R.color.colorBackground)
+                                    .textColor(R.color.colorBackground)
+                                    .dimColor(R.color.black)
+                                    .drawShadow(true)
+                                    .cancelable(true)
+                                    .tintTarget(true)
+                    ).start();
+
             SharedPreferences.Editor editor = preferences.edit();
             editor.putBoolean("preferences_guide", Boolean.FALSE).apply();
         }
-
-        new TapTargetSequence(this)
-                .target(
-                        TapTarget.forToolbarNavigationIcon(toolbar, "Navigation!", "Navigation will help you to find the right section!")
-                                .outerCircleColor(R.color.colorPrimary)
-                                .targetCircleColor(R.color.colorBackground)
-                                .textColor(R.color.colorBackground)
-                                .dimColor(R.color.black)
-                                .drawShadow(true)
-                                .cancelable(true)
-                                .tintTarget(true)
-                ).start();
 
         fragmentManager.beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
     }
