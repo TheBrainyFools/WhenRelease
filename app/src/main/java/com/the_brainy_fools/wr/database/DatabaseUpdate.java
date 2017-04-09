@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 import com.the_brainy_fools.wr.receiver.AlarmHelper;
 
 public class DatabaseUpdate {
-    SQLiteDatabase sqLiteDatabase;
-    AlarmHelper alarmHelper;
+    private SQLiteDatabase sqLiteDatabase;
+    private AlarmHelper alarmHelper;
 
-    public DatabaseUpdate(SQLiteDatabase sqLiteDatabase) {
+    DatabaseUpdate(SQLiteDatabase sqLiteDatabase) {
         this.sqLiteDatabase = sqLiteDatabase;
         alarmHelper = AlarmHelper.getInstance();
     }
