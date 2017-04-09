@@ -1,8 +1,8 @@
 package com.the_brainy_fools.wr.model;
 
 public class SerialAiringModel {
-    int ID;
-    String poster, title, genres, popularity, voteAverage;
+    private int ID;
+    private String poster, title, genres, popularity, voteAverage;
 
     public int getID() {
         return ID;
