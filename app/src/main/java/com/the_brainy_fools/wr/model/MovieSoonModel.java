@@ -1,9 +1,9 @@
 package com.the_brainy_fools.wr.model;
 
 public class MovieSoonModel {
-    int ID;
-    String poster, title, genres, date, popularity;
-    long dateMill;
+    private int ID;
+    private String poster, title, genres, date, popularity;
+    private long dateMill;
 
     public int getID() {
         return ID;
