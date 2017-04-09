@@ -1,8 +1,8 @@
 package com.the_brainy_fools.wr.model;
 
 public class MovieCinemaModel {
-    int ID;
-    String poster, title, genres, date, popularity, voteAverage;
+    private int ID;
+    private String poster, title, genres, date, popularity, voteAverage;
 
     public int getID() {
         return ID;
