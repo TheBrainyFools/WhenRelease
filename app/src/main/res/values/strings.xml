@@ -1,6 +1,8 @@
 <resources>
     <!-- MAIN SECTION -->
     <string name="app_name">WhenRelease</string>
+    <string name="empty_header">You do not add anything!</string>
+    <string name="empty">Add something right now! :)</string>
     <!-- !MAIN SECTION -->
 
     <!-- NETWORK STATUS -->
