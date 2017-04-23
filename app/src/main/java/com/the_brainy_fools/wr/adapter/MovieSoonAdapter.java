@@ -65,13 +65,6 @@ public class MovieSoonAdapter extends RecyclerSwipeAdapter<MovieSoonAdapter.Movi
         movieSM = data.get(position);
 
         holder.swipeLayout.setShowMode(SwipeLayout.ShowMode.PullOut);
-        //holder.swipeLayout.addDrag(SwipeLayout.DragEdge.Right, holder.bottom);
-        holder.swipeLayout.addSwipeListener(new SimpleSwipeListener() {
-            @Override
-            public void onOpen(SwipeLayout layout) {
-                Toast.makeText(context, "Swiped", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         Picasso.with(context).load(movieSM.getPoster()).error(R.drawable.ic_launcher).into(holder.poster);
         holder.title.setText(movieSM.getTitle());
@@ -126,7 +119,7 @@ public class MovieSoonAdapter extends RecyclerSwipeAdapter<MovieSoonAdapter.Movi
             watched = (ImageButton) itemView.findViewById(R.id.movie_soon_card_watched);
             favourite = (ImageButton) itemView.findViewById(R.id.movie_soon_card_favourite);
 
-            swipeLayout.setOnClickListener(new View.OnClickListener() {
+            bottom.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     movieSM = data.get(getLayoutPosition());
