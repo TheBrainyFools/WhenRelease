@@ -79,17 +79,33 @@ public class MovieCinemaAdapter extends RecyclerView.Adapter<MovieCinemaAdapter.
                     int position = getLayoutPosition();
                     movieCM = data.get(position);
 
-                    //@TODO:
-                    // new animation
-
                     YoYo.with(Techniques.FlipOutX).duration(750).playOn(follow);
-
                     YoYo.with(Techniques.FlipInX).duration(750).playOn(follow);
                 }
             });
 
             watched = (ImageView) itemView.findViewById(R.id.movie_cinema_watched);
+            watched.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getLayoutPosition();
+                    movieCM = data.get(position);
+
+                    YoYo.with(Techniques.FlipOutX).duration(750).playOn(watched);
+                    YoYo.with(Techniques.FlipInX).duration(750).playOn(watched);
+                }
+            });
             favourite = (ImageView) itemView.findViewById(R.id.movie_cinema_favourite);
+            favourite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getLayoutPosition();
+                    movieCM = data.get(position);
+
+                    YoYo.with(Techniques.FlipOutX).duration(750).playOn(favourite);
+                    YoYo.with(Techniques.FlipInX).duration(750).playOn(favourite);
+                }
+            });
 
             itemView.setOnClickListener(this);
         }
