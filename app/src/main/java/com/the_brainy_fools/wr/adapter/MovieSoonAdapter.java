@@ -95,9 +95,9 @@ public class MovieSoonAdapter extends RecyclerSwipeAdapter<MovieSoonAdapter.Movi
             holder.watched.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_watched_single_black_24dp));
 
         if (favouriteID.size() != 0 && favouriteID.contains(movieSM.getID()))
-            holder.favourite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_unfavourite_black_24dp));
-        else
             holder.favourite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favourite_black_24dp));
+        else
+            holder.favourite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_unfavourite_black_24dp));
     }
 
     @Override
@@ -113,7 +113,7 @@ public class MovieSoonAdapter extends RecyclerSwipeAdapter<MovieSoonAdapter.Movi
     public class Movie extends RecyclerView.ViewHolder {
         SwipeLayout swipeLayout;
         RelativeLayout bottom;
-        TextView title, genre, date, popularity, voteAverage;
+        TextView title, genre, date, popularity;
         ImageView poster;
         ImageButton follow, watched, favourite;
 

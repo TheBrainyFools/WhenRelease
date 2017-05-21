@@ -31,6 +31,7 @@ public class MovieCinemaFragment extends Fragment {
     private MovieCinemaAdapter movieCA;
     private MovieCinemaModel movieCM;
     private ArrayList<MovieCinemaModel> data = new ArrayList<>();
+
     private int page = 1;
     private boolean loading;
 
@@ -48,7 +49,7 @@ public class MovieCinemaFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.movie_cinema_RV);
         final LinearLayoutManager linearLM = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLM);
-        movieCA = new MovieCinemaAdapter(getContext(), data);
+        movieCA = new MovieCinemaAdapter(getActivity(), getContext(), data);
         recyclerView.setAdapter(movieCA);
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
