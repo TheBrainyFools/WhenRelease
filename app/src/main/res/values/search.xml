@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="results">
+        <item>Beauty and the Beast</item>
+        <item>Guardians of the Galaxy Vol. 2</item>
+        <item>Alien: Covenant</item>
+        <item>The Fate of the Furious</item>
+        <item>Logan</item>
+        <item>Pirates of the Caribbean: The Curse of the Black Pearl</item>
+        <item>Sing</item>
+        <item>Pirates of the Caribbean: Dead Men Tell No Tales</item>
+        <item>Guardians of the Galaxy</item>
+        <item>Get Out</item>
+        <item>The Boss Baby</item>
+        <item>Split</item>
+        <item>Interstellar</item>
+        <item>The Great Wall</item>
+        <item>xXx: Return of Xander Cage</item>
+        <item>Jurassic World</item>
+        <item>Mad Max: Fury Road</item>
+        <item>King Arthur: Legend of the Sword</item>
+        <item>Arrival</item>
+        <item>Deadpool</item>
+        <item>Saori Hara</item>
+        <item>Emma Watson</item>
+        <item>Wentworth Miller</item>
+        <item>Will Smith</item>
+        <item>Vin Diesel</item>
+        <item>Action</item>
+        <item>Adventure</item>
+        <item>Animation</item>
+        <item>Comedy</item>
+        <item>Crime</item>
+        <item>Documentary</item>
+        <item>Drama</item>
+        <item>Family</item>
+        <item>Fantasy</item>
+        <item>Foreign</item>
+        <item>History</item>
+        <item>Horror</item>
+        <item>music</item>
+        <item>Mystery</item>
+        <item>Romance</item>
+        <item>Science fiction</item>
+        <item>TV movie</item>
+        <item>Thriller</item>
+        <item>War</item>
+        <item>Western</item>
+    </string-array>
+</resources>
