@@ -54,7 +54,7 @@ public class MovieSoonFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.movie_soon_RV);
         final LinearLayoutManager linearLM = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLM);
-        movieSA = new MovieSoonAdapter(getContext(), data);
+        movieSA = new MovieSoonAdapter(getActivity(), getContext(), data);
         recyclerView.setAdapter(movieSA);
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {

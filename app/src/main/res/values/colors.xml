@@ -11,5 +11,6 @@
 
     <!-- CUSTOM -->
     <color name="colorBackground">#ffffff</color>
+    <color name="colorTransparent">#00ffffff</color>
     <!-- !CUSTOM -->
 </resources>

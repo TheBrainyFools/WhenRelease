@@ -1,7 +1,10 @@
 package com.the_brainy_fools.wr.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +20,8 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.daimajia.swipe.SimpleSwipeListener;
 import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.adapters.RecyclerSwipeAdapter;
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetView;
 import com.squareup.picasso.Picasso;
 import com.the_brainy_fools.wr.MainActivity;
 import com.the_brainy_fools.wr.R;
@@ -27,8 +32,11 @@ import com.the_brainy_fools.wr.model.MovieSoonModel;
 import java.util.ArrayList;
 
 public class MovieSoonAdapter extends RecyclerSwipeAdapter<MovieSoonAdapter.Movie> {
+    private Activity activity;
     private MovieSoonModel movieSM;
     private Context context;
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
     private ArrayList<MovieSoonModel> data = new ArrayList<>();
 
     private ArrayList<Integer> followedID = new ArrayList<>();
@@ -37,9 +45,13 @@ public class MovieSoonAdapter extends RecyclerSwipeAdapter<MovieSoonAdapter.Movi
 
     private DatabaseHelper databaseHelper;
 
-    public MovieSoonAdapter(Context context, ArrayList<MovieSoonModel> data) {
+    public MovieSoonAdapter(Activity activity, Context context, ArrayList<MovieSoonModel> data) {
+        this.activity = activity;
         this.context = context;
         this.data = data;
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        editor = preferences.edit();
     }
 
     @Override
@@ -61,7 +73,7 @@ public class MovieSoonAdapter extends RecyclerSwipeAdapter<MovieSoonAdapter.Movi
     }
 
     @Override
-    public void onBindViewHolder(Movie holder, int position) {
+    public void onBindViewHolder(final Movie holder, int position) {
         movieSM = data.get(position);
 
         holder.swipeLayout.setShowMode(SwipeLayout.ShowMode.PullOut);
@@ -118,6 +130,54 @@ public class MovieSoonAdapter extends RecyclerSwipeAdapter<MovieSoonAdapter.Movi
             follow = (ImageButton) itemView.findViewById(R.id.movie_soon_card_follow);
             watched = (ImageButton) itemView.findViewById(R.id.movie_soon_card_watched);
             favourite = (ImageButton) itemView.findViewById(R.id.movie_soon_card_favourite);
+
+            if (preferences.getBoolean("preferences_tapTargetView_recyclerView_genre", true)) {
+                TapTargetView.showFor(activity, TapTarget.forView(genre, "Swipe!", "Swipe this list and you will see hidden menu :)")
+                        .outerCircleColor(R.color.colorPrimary)
+                        .targetCircleColor(R.color.colorBackground)
+                        .textColor(R.color.colorBackground)
+                        .dimColor(R.color.black)
+                        .drawShadow(true)
+                        .cancelable(true)
+                        .tintTarget(true)
+                );
+
+                editor.putBoolean("preferences_tapTargetView_recyclerView_genre", Boolean.FALSE).apply();
+            }
+
+            swipeLayout.addSwipeListener(new SwipeLayout.SwipeListener() {
+                @Override
+                public void onStartOpen(SwipeLayout layout) {}
+
+                @Override
+                public void onOpen(SwipeLayout layout) {
+                    if (preferences.getBoolean("preferences_tapTargetView_recyclerView_swiped", true)) {
+                        TapTargetView.showFor(activity, TapTarget.forView(watched, "Yay!", "Now you can rapidly add this movie to one of the sections!")
+                                .outerCircleColor(R.color.colorPrimary)
+                                .textColor(R.color.colorBackground)
+                                .dimColor(R.color.black)
+                                .drawShadow(true)
+                                .cancelable(true)
+                                .tintTarget(true)
+                                .transparentTarget(true)
+                        );
+
+                        editor.putBoolean("preferences_tapTargetView_recyclerView_swiped", Boolean.FALSE).apply();
+                    }
+                }
+
+                @Override
+                public void onStartClose(SwipeLayout layout) {}
+
+                @Override
+                public void onClose(SwipeLayout layout) {}
+
+                @Override
+                public void onUpdate(SwipeLayout layout, int leftOffset, int topOffset) {}
+
+                @Override
+                public void onHandRelease(SwipeLayout layout, float xvel, float yvel) {}
+            });
 
             bottom.setOnClickListener(new View.OnClickListener() {
                 @Override
