@@ -1,5 +1,4 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -48,59 +47,12 @@
                 android:layout_toEndOf="@+id/MSDBBudget"
                 android:layout_toRightOf="@+id/MSDBBudget" />
 
-            <!-- POPULARITY BLOCK -->
-            <TextView
-                android:id="@+id/MSDBPopularity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDBudget"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_toEndOf="@+id/MSDPoster"
-                android:layout_toRightOf="@+id/MSDPoster"
-                android:text="Popularity:"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/MSDPopularity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDBudget"
-                android:layout_marginLeft="4dp"
-                android:layout_marginStart="4dp"
-                android:layout_toEndOf="@+id/MSDBPopularity"
-                android:layout_toRightOf="@+id/MSDBPopularity"
-                android:maxLength="4" />
-
-            <!-- RUNTIME BLOCK -->
-            <TextView
-                android:id="@+id/MSDBRuntime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDBPopularity"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_toEndOf="@+id/MSDPoster"
-                android:layout_toRightOf="@+id/MSDPoster"
-                android:text="Runtime:"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/MSDRuntime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDPopularity"
-                android:layout_marginLeft="4dp"
-                android:layout_marginStart="4dp"
-                android:layout_toEndOf="@+id/MSDBRuntime"
-                android:layout_toRightOf="@+id/MSDBRuntime" />
-
             <!-- STATUS BLOCK -->
             <TextView
                 android:id="@+id/MSDBStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDBRuntime"
+                android:layout_below="@+id/MSDBBudget"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_toEndOf="@+id/MSDPoster"
@@ -112,7 +64,7 @@
                 android:id="@+id/MSDStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDRuntime"
+                android:layout_below="@+id/MSDBBudget"
                 android:layout_marginLeft="4dp"
                 android:layout_marginStart="4dp"
                 android:layout_toEndOf="@+id/MSDBStatus"
@@ -137,50 +89,12 @@
                 android:layout_toEndOf="@+id/MSDBtitle"
                 android:layout_toRightOf="@+id/MSDBtitle" />
 
-            <!-- YEAR BLOCK -->
-            <TextView
-                android:id="@+id/MSDBYear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDBtitle"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:text="Year:"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/MSDYear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDTitle"
-                android:layout_toEndOf="@+id/MSDBYear"
-                android:layout_toRightOf="@+id/MSDBYear" />
-
-            <!-- ORIGINAL TITLE BLOCK -->
-            <TextView
-                android:id="@+id/MSDBOriginal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDBYear"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:text="Original:"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/MSDOriginal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDYear"
-                android:layout_toEndOf="@+id/MSDBOriginal"
-                android:layout_toRightOf="@+id/MSDBOriginal" />
-
             <!-- GENRE BLOCK -->
             <TextView
                 android:id="@+id/MSDBGenre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDBOriginal"
+                android:layout_below="@+id/MSDBtitle"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:text="Genre:"
@@ -190,35 +104,16 @@
                 android:id="@+id/MSDGenre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDOriginal"
+                android:layout_below="@+id/MSDTitle"
                 android:layout_toEndOf="@+id/MSDBGenre"
                 android:layout_toRightOf="@+id/MSDBGenre" />
-
-            <!-- DATE BLOCK -->
-            <TextView
-                android:id="@+id/MSDBDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDBGenre"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:text="Date:"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/MSDDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDGenre"
-                android:layout_toEndOf="@+id/MSDBDate"
-                android:layout_toRightOf="@+id/MSDBDate" />
 
             <!-- TAG BLOCK -->
             <TextView
                 android:id="@+id/MSDBTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDBDate"
+                android:layout_below="@+id/MSDBGenre"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:text="Tag:"
@@ -228,7 +123,7 @@
                 android:id="@+id/MSDTag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/MSDDate"
+                android:layout_below="@+id/MSDGenre"
                 android:layout_toEndOf="@+id/MSDBTag"
                 android:layout_toRightOf="@+id/MSDBTag" />
 

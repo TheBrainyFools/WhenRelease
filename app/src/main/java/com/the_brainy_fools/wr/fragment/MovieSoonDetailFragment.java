@@ -29,10 +29,9 @@ import java.util.Locale;
 @SuppressLint("ValidFragment")
 public class MovieSoonDetailFragment extends Fragment {
     private int ID;
-    private String IMDB_ID;
     private boolean parseDescriptionFromIMDB = false;
     private ImageView poster;
-    private TextView title, original, year, genre, date, tag, description, budget, popularity, runtime, status, productionCompanies, productionCountries;
+    private TextView title, genre, tag, description, budget, status, productionCompanies, productionCountries;
 
     public MovieSoonDetailFragment(int ID) {
         this.ID = ID;
@@ -46,15 +45,10 @@ public class MovieSoonDetailFragment extends Fragment {
 
         poster = (ImageView) rootView.findViewById(R.id.MSDPoster);
         title = (TextView) rootView.findViewById(R.id.MSDTitle);
-        original = (TextView) rootView.findViewById(R.id.MSDOriginal);
-        year = (TextView) rootView.findViewById(R.id.MSDYear);
         genre = (TextView) rootView.findViewById(R.id.MSDGenre);
-        date = (TextView) rootView.findViewById(R.id.MSDDate);
         tag = (TextView) rootView.findViewById(R.id.MSDTag);
         description = (TextView) rootView.findViewById(R.id.MSDDescription);
         budget = (TextView) rootView.findViewById(R.id.MSDBudget);
-        popularity = (TextView) rootView.findViewById(R.id.MSDPopularity);
-        runtime = (TextView) rootView.findViewById(R.id.MSDRuntime);
         status = (TextView) rootView.findViewById(R.id.MSDStatus);
         productionCompanies = (TextView) rootView.findViewById(R.id.MSDProductionCompanies);
         productionCountries = (TextView) rootView.findViewById(R.id.MSDProductionCountries);
@@ -66,9 +60,6 @@ public class MovieSoonDetailFragment extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            IMDB_ID = response.getString("imdb_id");
-                            parse(IMDB_ID);
-
                             Picasso.with(getContext()).load("http://image.tmdb.org/t/p/w185" + response.getString("poster_path")).error(R.drawable.ic_launcher).into(poster);
 
                             status.setText(response.getString("status"));
@@ -117,55 +108,5 @@ public class MovieSoonDetailFragment extends Fragment {
         Volley.newRequestQueue(getContext()).add(parseID);
 
         return rootView;
-    }
-
-    public void parse(String IMDB_ID) {
-        JsonObjectRequest parseData = new JsonObjectRequest(Request.Method.GET, "http://www.omdbapi.com/?i=" + IMDB_ID + "&plot=full&r=json&tomatoes=true",
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            //mOriginal = response.getString("Title");
-                            original.setText(response.getString("Title"));
-                            year.setText(response.getString("Year"));
-                            date.setText(response.getString("Released"));
-                            runtime.setText(response.getString("Runtime"));
-                            popularity.setText(response.getString("imdbRating"));
-
-                            if (parseDescriptionFromIMDB)
-                                description.setText(response.getString("Plot"));
-
-                            /**
-                             Picasso.with(getContext()).load("http://image.tmdb.org/t/p/w185" + response.getString("poster_path")).error(R.drawable.ic_launcher).into(poster);
-                             if (response.getString("imdb_id") != "")
-                             IMDB_ID = response.getString("imdb_id");
-                             else {
-                             budget.setText("$" + response.getString("budget"));
-                             popularity.setText(response.getString("popularity"));
-                             runtime.setText(response.getString("runtime"));
-                             status.setText(response.getString("status"));
-                             title.setText(response.getString("title"));
-                             original.setText(response.getString("original_title"));
-                             genre.setText(response.getJSONArray("genres").getJSONObject(0).getString("name"));
-                             date.setText(response.getString("release_date"));
-                             tag.setText(response.getString("tagline"));
-                             description.setText(response.getString("overview"));
-                             productionCompanies.setText(response.getJSONArray("production_companies").getJSONObject(0).getString("name"));
-                             productionCountries.setText(response.getJSONArray("production_countries").getJSONObject(0).getString("name"));
-                             }
-                             */
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), R.string.error_network, Toast.LENGTH_LONG).show();
-                    }
-                }
-        );
-        Volley.newRequestQueue(getContext()).add(parseData);
     }
 }
